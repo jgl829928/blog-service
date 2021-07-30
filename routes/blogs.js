@@ -9,13 +9,13 @@ router.post('/', function (ctx, next) {
 
 router.get('/', async (ctx, next) => {
   const data = await Blog.find()
-  const result = { // 创建响应返回的数据结构
+  const result = { 
     code: 200,
     data: data,
-    message:"success"
+    message: "success"
   }
-  ctx.response.body = result // 直接把响应写进页面
-  return result // return干嘛，return到network吗？
+  ctx.response.body = result 
+  return result 
 })
 
 router.get('/:id', function (ctx, next) {
